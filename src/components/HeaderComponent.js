@@ -1,11 +1,11 @@
 import React from "react";
-import logoImg from "../assets/Logo.png"
+import '../css/Header.css';
 
 function Header(){
     return(
         <React.Fragment>
-        <img src={logoImg} alt="Logo" className="headerLogo"></img>
-        <div>Lost in translation</div>  
+        <p className="headerText">Lost in translation</p>  
+        <div className="headerDiv"></div>
         </React.Fragment>
     )  
 }
