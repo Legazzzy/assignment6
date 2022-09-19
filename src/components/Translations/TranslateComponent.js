@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/TranslateComponent.css';
+import '../../css/TranslateComponent.css';
 
 function Translate(){
     return(
