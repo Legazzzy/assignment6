@@ -1,4 +1,7 @@
-import logoHallo from '../assets/Logo-Hello.png';
+import logoHallo from '../../assets/Logo-Hello.png';
+import '../../css/TranslateComponent.css';
+
+
 import React from "react";
 
 function HelloLogo(){
