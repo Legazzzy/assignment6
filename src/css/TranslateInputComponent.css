@@ -1,0 +1,49 @@
+.inputCard{
+    position: absolute;
+    width: 755px;
+    height: 176px;
+    left: 535px;
+    top: 406px;
+    background: #8D8E8E;
+    border-radius: 10px;
+}
+
+
+::placeholder{
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+
+}
+input:focus {
+    outline: none;
+}
+.inputField{
+    height: 50px;
+    margin: auto;
+    display: block;
+    width: 450px;
+    border: none;
+    background: #8D8E8E;
+    color: white;
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.underline{
+    width: 93%;
+    margin-left: 25px;
+    margin-top: 0px;
+    margin-right: 25px;
+    border: 3px solid #FFFFFF;
+    }
+
+.content{
+    margin-top: 50px;
+}
