@@ -5,7 +5,7 @@ function Header(){
     return(
         <React.Fragment>
         <img src={logoImg} alt="Logo" className="headerLogo"></img>
-        <div>Header component</div>  
+        <div>Lost in translation</div>  
         </React.Fragment>
     )  
 }

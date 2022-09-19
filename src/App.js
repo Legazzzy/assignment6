@@ -1,5 +1,5 @@
 
-import './App.css';
+import './css/App.css';
 import {
   BrowserRouter,
   Routes,
@@ -17,16 +17,18 @@ function App() {
 
 
   return (
+    <div className="App">
+      <Header id="header" />
+
     <BrowserRouter>
-        <div className="App">
-        <Header></Header>
           <Routes>
             <Route path='/' element={ <Login /> } />
             <Route path='/orders' element={ <Orders /> } />
             <Route path='/profile' element={ <Profile /> } />
           </Routes>
-      </div>
     </BrowserRouter>
+    </div>
+
   );
 }
 
