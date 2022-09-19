@@ -1,0 +1,17 @@
+@import url('https://fonts.google.com/specimen/Love+Ya+Like+A+Sister?query=Love+Ya+Like+a+sister');
+.headerText{
+    background-color: #52D1DC;
+    height: 70px;
+    margin: 0px;
+    font-size: 230%;
+    font-style:italic;
+    text-align:left;
+    padding-top: 30px;
+    
+}
+
+.headerDiv{
+    height: 388px;
+    background-color: #475B5A;
+    margin: 0px;
+}
