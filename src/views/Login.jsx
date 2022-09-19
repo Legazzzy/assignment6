@@ -1,6 +1,13 @@
+import React from 'react';
+import '../css/login.css';
+import LoginComp from '../components/Login/LoginComponent'
+
+
 const Login = () => {
     return (
-        <h1>Login</h1>
+        <React.Fragment>
+        <LoginComp />
+        </React.Fragment>
     )
 }
 
