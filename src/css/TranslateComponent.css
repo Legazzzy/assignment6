@@ -1,0 +1,26 @@
+.card{
+    position: absolute;
+    width: 1036px;
+    height: 244px;
+    left: 185px;
+    top: 719px;
+    background: #8D8E8E;
+    border-radius: 10px;
+}
+.headText{
+    margin-left: 25px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+    
+    color: white;
+}
+
+.underline{
+    width: 979px;
+    margin-left: 25px;
+    border: 3px solid #FFFFFF;
+    }
