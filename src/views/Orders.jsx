@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "../components/HeaderComponent";
+import Translate from '../components/TranslateComponent';
+import HelloLogo from "../components/HelloLogoComponent";
 
 const Orders = () => {
     return (
-        <React.Fragment>
-        <Header />
-        <h1>Orders</h1>
-        </React.Fragment>
+        <div>
+            <HelloLogo/>
+           <Translate/>
+        </div>
+
     )
 }
 

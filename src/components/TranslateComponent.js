@@ -1,8 +1,12 @@
 import React from "react";
+import '../css/TranslateComponent.css';
 
 function Translate(){
     return(
-        <div> Translate</div>
+        <div class="card">
+            <p class="headText">Translate: </p>
+            <p class="underline"></p>
+        </div>
     )
 }
 
