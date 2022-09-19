@@ -3,9 +3,10 @@ import Header from "../components/HeaderComponent";
 import Translate from '../components/Translations/TranslateComponent';
 import HelloLogo from "../components/Translations/HelloLogoComponent";
 import TranslateInput from "../components/Translations/TranslationInput";
+import withAuth from "../hoc/withAuth";
 
 
-const Orders = () => {
+const Translations = () => {
     return (
         <div>
             <HelloLogo/>
@@ -16,4 +17,5 @@ const Orders = () => {
     )
 }
 
-export default Orders
+export default Translations;
+//export default withAuth(Translations);
