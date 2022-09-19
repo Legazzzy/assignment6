@@ -9,18 +9,25 @@
 }
 .headText{
     margin-left: 25px;
-    font-family: 'Love Ya Like A Sister';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
-    /* identical to box height */
-    
-    color: white;
+}
+.textToTranslate{
+    margin-left: 20px;
 }
 
 .underline{
     width: 979px;
+    margin-top: -30px;
     margin-left: 25px;
     border: 3px solid #FFFFFF;
     }
+
+.top{
+    display: flex;
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+
+}
