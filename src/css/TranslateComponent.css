@@ -1,6 +1,6 @@
 .card{
     position: absolute;
-    width: 1036px;
+    width: 45%;
     height: 244px;
     left: 185px;
     top: 719px;
@@ -15,9 +15,10 @@
 }
 
 .underline{
-    width: 979px;
+    width: 93%;
     margin-top: -30px;
     margin-left: 25px;
+    margin-right: 25px;
     border: 3px solid #FFFFFF;
     }
 
@@ -34,5 +35,5 @@
 
 .App-logo{
     margin-top: -300px;
-    margin-left: 100px;
+    margin-left: 50px;
 }

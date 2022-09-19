@@ -3,12 +3,12 @@ import '../../css/TranslateComponent.css';
 
 function Translate(){
     return(
-        <div class="card">
-            <div class="top">
-            <p class="headText">Translate: </p>
-            <p class="textToTranslate">Placeholder for given input text</p>
+        <div className="card">
+            <div className="top">
+            <p className="headText">Translate: </p>
+            <p className="textToTranslate">Placeholder for given input text</p>
             </div>
-            <p class="underline"></p>
+            <p className="underline"></p>
         </div>
     )
 }
