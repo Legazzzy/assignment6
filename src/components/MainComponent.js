@@ -1,7 +1,7 @@
 import React from "react";
 import Header from './HeaderComponent'
 import Footer from './FooterComponent';
-import Login from './LoginComponent'
+import Login from './Login/LoginComponent'
 import Translate from './TranslateComponent'
 
 
