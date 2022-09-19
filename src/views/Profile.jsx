@@ -11,11 +11,16 @@ const Profile = () => {
 
     const { user } = useUser();
 
+    const logout = () => {
+        //storageSave(STORAGE_KEY_USER, null);
+        //setUser(null);
+    }
+
     return (
         <div>
           <h1>Profile</h1>
           <ProfileHeader username={ user.username }/>
-          <ProfileActions />
+          <ProfileActions logout={ logout }/>
           <ProfileTranslateHistory translations={ user.translations }/>
         </div>
     )
