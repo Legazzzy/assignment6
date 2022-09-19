@@ -1,8 +1,12 @@
 import React from "react";
+import '../css/Header.css';
 
 function Header(){
     return(
-        <div>Header component</div>  
+        <React.Fragment>
+        <p className="headerText">Lost in translation</p>  
+        <div className="headerDiv"></div>
+        </React.Fragment>
     )  
 }
 
