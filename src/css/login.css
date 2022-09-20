@@ -7,6 +7,15 @@
     position: relative;
     top: -350px;
 }
-.inputDiv{
-    color: white;
+
+.formDiv{
+    position: relative;
+    top: -360px;
 }
+
+.logoandform{
+    text-align: center;
+    
+}
+
+

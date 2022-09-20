@@ -72,7 +72,7 @@ const LoginForm = () => {
 
     return (
         <>
-            <form onSubmit={ handleSubmit(onSubmit) }>
+            <form onSubmit={ handleSubmit(onSubmit)} className="formDiv">
                 <input type="text" className="username" name="username" placeholder="Username" {...register("username", usernameConfig )}/>
                 <button type='submit' disabled={isDisabled}>Log in</button>
             </form>
