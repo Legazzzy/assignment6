@@ -26,11 +26,20 @@ import w from '../../assets/individial_signs/w.png';
 import x from '../../assets/individial_signs/x.png';
 import y from '../../assets/individial_signs/y.png';
 import z from '../../assets/individial_signs/z.png';
+import { useEffect } from "react";
 
 
 
 function Translate({wordToTranslate}){
-    function showTranslation(){
+
+    useEffect(() => {
+        
+        showTranslation()
+    },[wordToTranslate]
+    )
+
+    
+    function showTranslation() {
         var imageDiv = document.getElementById('translateBox');
         imageDiv.innerHTML = "";
         for(let i = 0; i < wordToTranslate.length; i++){
@@ -44,6 +53,7 @@ function Translate({wordToTranslate}){
                 imageDiv.appendChild(image);
         }
     }
+    
 
     function getImgPath(char){
         let path = "";
@@ -137,7 +147,6 @@ function Translate({wordToTranslate}){
             <p className="textToTranslate">Placeholder for given input text</p>
             </div>
             <p className="underline"></p>
-            <button onClick={() => showTranslation()}>Show translation</button>
             <div id="translateBox">
 
             </div>
