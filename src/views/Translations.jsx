@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "../components/HeaderComponent";
 import Translate from '../components/Translations/TranslateComponent';
 import HelloLogo from "../components/Translations/HelloLogoComponent";
@@ -7,11 +7,13 @@ import withAuth from "../hoc/withAuth";
 
 
 const Translations = () => {
+    const [wordToTranslate, setWordToTranslate] = useState("");
+
     return (
         <div>
             <HelloLogo/>
-            <TranslateInput/>
-           <Translate/>
+            <TranslateInput setWordToTranslate={setWordToTranslate}/>
+           <Translate wordToTranslate = {wordToTranslate}/>
         </div>
 
     )

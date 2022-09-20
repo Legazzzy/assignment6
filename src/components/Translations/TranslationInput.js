@@ -1,36 +1,28 @@
 import React from "react";
+import { useState } from "react";
 import { Component } from "react";
 import '../../css/TranslateInputComponent.css';
 
-class TranslateInput extends Component{
+const TranslateInput = ({setWordToTranslate}) => {
     
-    state = {
-        wordToTranslate: ""
+    
+    const [inputWord, setInputWord] = useState("");
+    
+    const handleInput = (event) => {
+        setInputWord(event.target.value)
     };
-    
-    
-    handleInput = event => {
-        this.setState({wordToTranslate: event.target.value});
-    };
-    
-    logValue = () => {
-        console.log(this.state.wordToTranslate);
-    }
-    
-    render(){
 
         return(
             <div className="inputCard">
             <div className="content">
                 <div className="inputline">
-                <input type="text" placeholder="Enter word or sentence here" className="inputField" onChange={this.handleInput}></input> 
-                <button className="translateButton" onClick={this.logValue} >Translate</button>
+                <input type="text" placeholder="Enter word or sentence here" className="inputField" onChange={handleInput}></input> 
+                <button className="translateButton" onClick={() => setWordToTranslate(inputWord)}>Translate</button>
                 </div>
                 <p className="underline"></p>
             </div>
 
         </div>
     )
-}
 }
 export default TranslateInput;
