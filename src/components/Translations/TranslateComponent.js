@@ -144,7 +144,7 @@ function Translate({wordToTranslate}){
         <div className="card">
             <div className="top">
             <p className="headText">Translate: </p>
-            <p className="textToTranslate">Placeholder for given input text</p>
+            <p className="textToTranslate">{wordToTranslate}</p>
             </div>
             <p className="underline"></p>
             <div id="translateBox">
