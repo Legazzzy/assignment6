@@ -6,8 +6,10 @@ import LoginForm from '../components/Login/LoginForm'
 const Login = () => {
     return (
         <React.Fragment>
-        <LoginComp />
-        <LoginForm />
+        <div className='logoandform'>
+            <LoginComp />
+            <LoginForm />
+        </div>
         </React.Fragment>
     )
 }

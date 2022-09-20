@@ -2,10 +2,8 @@ import React from "react";
 import logoImg from "../../assets/Logo.png"
 import '../../css/login.css';
 import 'animate.css';
-var usernames = [];
 
-
-function Login(){
+function LoginComp(){
     return(
         <React.Fragment>
         <div className="loginDiv">
@@ -16,5 +14,5 @@ function Login(){
     )
 }
 
-export default Login;
+export default LoginComp;
 
