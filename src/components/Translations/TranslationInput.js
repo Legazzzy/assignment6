@@ -20,10 +20,12 @@ class TranslateInput extends Component{
     render(){
 
         return(
-            <div class="inputCard">
+            <div className="inputCard">
             <div className="content">
+                <div className="inputline">
                 <input type="text" placeholder="Enter word or sentence here" className="inputField" onChange={this.handleInput}></input> 
-                <button onClick={this.logValue} >Translate</button>
+                <button className="translateButton" onClick={this.logValue} >Translate</button>
+                </div>
                 <p className="underline"></p>
             </div>
 

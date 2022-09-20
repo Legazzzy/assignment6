@@ -47,3 +47,14 @@ input:focus {
 .content{
     margin-top: 50px;
 }
+.inputline{
+    display: flex;
+}
+.translateButton{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background:#475B5A;
+    color: white;
+}
