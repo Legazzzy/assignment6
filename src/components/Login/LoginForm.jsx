@@ -1,4 +1,6 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 import {useForm} from 'react-hook-form'
+import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 const apiURL = 'https://assignment6-mul.herokuapp.com'
 const apiKey = '1eLhEr5t/0uCkqaxIDWvgw=='
@@ -17,7 +19,10 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
+    const[isDisabled, setIsDisabled] = useState(false)
+
     const onSubmit = (data) => {
+        setIsDisabled(true)
         username = data.username;
         console.log(username)
 
@@ -69,7 +74,7 @@ const LoginForm = () => {
         <>
             <form onSubmit={ handleSubmit(onSubmit) }>
                 <input type="text" className="username" name="username" placeholder="Username" {...register("username", usernameConfig )}/>
-                <button type='submit'>Log in</button>
+                <button type='submit' disabled={isDisabled}>Log in</button>
             </form>
         </>
     )
