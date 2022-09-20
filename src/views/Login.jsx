@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
     return (
         <React.Fragment>
-        <Link to="/profile">profile</Link>  
-        <LoginComp />
+        <Link to="/profile">profile</Link> 
         <LoginForm />
         </React.Fragment>
     )

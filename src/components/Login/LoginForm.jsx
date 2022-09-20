@@ -1,9 +1,8 @@
-import {useForm} from 'react-hook-form'
-import { Navigate } from 'react-router-dom';
-const apiURL = 'https://assignment6-mul.herokuapp.com'
-const apiKey = '1eLhEr5t/0uCkqaxIDWvgw=='
-
-var username = '';
+import { useForm } from 'react-hook-form';
+import { useState, useEffect } from 'react';
+import { loginUser } from '../../api/user';
+import { storageSave } from '../../utils/storage';
+import { useHistory } from 'react-router-dom';
 
 const usernameConfig = {
     required: true,
@@ -17,62 +16,59 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
-    const onSubmit = (data) => {
-        username = data.username;
-        console.log(username)
+const [ loading, setLoading ] = useState(false);
+const [ apiError, setApiError ] = useState(null);
 
-        fetch(`${apiURL}/translations?username=${username}`)
-        .then(response => response.json())
-        .then(results => {
-            if (results.length >0){
-                alert("logged in")
-                Navigate("/translations")
-            } else {
-                alert("No user with that username, creating new user")
-                postNewUser();
-                Navigate("/translations")
-            }
-        })
-        .catch(error => {
-        })
+const onSubmit = async ({ username }) => {
+    setLoading(true);
+    const [ error, user ] = await loginUser(username);
+    console.log(error);
+    console.log(user);
+    if(error !== null){
+        setApiError(error);
+    }
+    if(user !== null){
+        storageSave('transaction-user', user);
+    }
+    setLoading(false);
 
-        
+}
 
+
+const errorMessage = (() => {
+    if(!errors.username) {
+        return null;
     }
 
-    const postNewUser = () => {
-        fetch(`${apiURL}/translations`, {
-            method: 'POST',
-            headers: {
-              'X-API-Key': apiKey,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 
-                username: username, 
-                translations: [] 
-            })
-            })
-            .then(response => {
-             if (!response.ok) {
-                throw new Error('Could not create new user')
-            }
-            return response.json()
-            })
-            .then(newUser => {
-            console.log(newUser)
-            })
-            .catch(error => {
-        })
+    if(errors.username.type === 'required'){
+        return <span>Username is required</span>
     }
 
-    return (
-        <>
-            <form onSubmit={ handleSubmit(onSubmit) }>
-                <input type="text" className="username" name="username" placeholder="Username" {...register("username", usernameConfig )}/>
-                <button type='submit'>Log in</button>
-            </form>
-        </>
-    )
+    if(errors.username.type === 'minLength'){
+        return <span>Username is too short</span> 
+    }
+})()
+
+return (
+    <>
+        <h2>What's your name?</h2>
+        <form onSubmit={ handleSubmit(onSubmit) }>
+            <fieldset>
+                <label htmlFor="username">Username</label>
+                <input 
+                    type="text"
+                    placeholder="johndoe"
+                    { ...register("username", usernameConfig) }/>
+                { errorMessage }
+            </fieldset>
+
+            <button type="submit" disabled= { loading }>Continue</button>
+
+            { loading && <p>Logging in...</p> }
+            { apiError && <p>{ apiError }</p> }
+        </form>
+    </>
+)
 }
 
 export default LoginForm
