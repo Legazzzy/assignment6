@@ -1,7 +1,8 @@
 import { isDisabled } from '@testing-library/user-event/dist/utils';
 import {useForm} from 'react-hook-form'
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 const apiURL = 'https://assignment6-mul.herokuapp.com'
 const apiKey = '1eLhEr5t/0uCkqaxIDWvgw=='
 
@@ -20,6 +21,7 @@ const LoginForm = () => {
     } = useForm()
 
     const[isDisabled, setIsDisabled] = useState(false)
+    const nav = useNavigate();
 
     const onSubmit = (data) => {
         setIsDisabled(true)
@@ -31,11 +33,11 @@ const LoginForm = () => {
         .then(results => {
             if (results.length >0){
                 alert("logged in")
-                Navigate("/translations")
+                nav('/translations')
             } else {
                 alert("No user with that username, creating new user")
                 postNewUser();
-                Navigate("/translations")
+                nav('/translations')
             }
         })
         .catch(error => {
