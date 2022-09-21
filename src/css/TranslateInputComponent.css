@@ -57,4 +57,10 @@ input:focus {
     border-radius: 10px;
     background:#475B5A;
     color: white;
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    cursor: pointer;
 }
