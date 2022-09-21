@@ -4,6 +4,7 @@ import LoginComp from '../components/Login/LoginComponent'
 import LoginForm from '../components/Login/LoginForm'
 
 const Login = () => {
+
     return (
         <React.Fragment>
         <div className='logoandform'>

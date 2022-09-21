@@ -1,3 +1,8 @@
+import {set, useForm} from 'react-hook-form'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { storageRead, storageSave } from '../../utils/storage';
+import UserProvider, { useUser } from '../../context/UserContext';
 import { isDisabled } from '@testing-library/user-event/dist/utils';
 import {useForm} from 'react-hook-form'
 import React, { useState } from 'react';
@@ -6,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const apiURL = 'https://assignment6-mul.herokuapp.com'
 const apiKey = '1eLhEr5t/0uCkqaxIDWvgw=='
 
-var username = '';
+var username = ''
 
 const usernameConfig = {
     required: true,
@@ -20,20 +25,31 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
+    const { user, setUser} = useUser()
+
+    useEffect(() => {
+        console.log('user has changed!' )
+    }, [ user ])
+
     const[isDisabled, setIsDisabled] = useState(false)
+    const[loggedInUser, setLoggedInUser]= useState("")
     const nav = useNavigate();
+    console.log("logged in user: " + loggedInUser)
+    const nav = useNavigate();
+
 
     const onSubmit = (data) => {
         setIsDisabled(true)
-        username = data.username;
-        console.log(username)
-
         fetch(`${apiURL}/translations?username=${username}`)
         .then(response => response.json())
         .then(results => {
+            username = data.username;
+            setUser(username)
             if (results.length >0){
                 alert("logged in")
                 nav('/translations')
+
+
             } else {
                 alert("No user with that username, creating new user")
                 postNewUser();
@@ -43,7 +59,10 @@ const LoginForm = () => {
         .catch(error => {
         })
 
-        
+        if (user !== null){
+            storageSave('logged in user', user)
+        }
+        setIsDisabled(false)
 
     }
 
@@ -81,8 +100,9 @@ const LoginForm = () => {
         </>
     )
 }
+export const loggedInUser = username;
 
-export default LoginForm
+export default LoginForm;
 
 
 

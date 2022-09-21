@@ -27,7 +27,7 @@ import x from '../../assets/individial_signs/x.png';
 import y from '../../assets/individial_signs/y.png';
 import z from '../../assets/individial_signs/z.png';
 import { useEffect } from "react";
-
+import { loggedInUser } from "../Login/LoginForm";
 
 
 function Translate({wordToTranslate}){
@@ -40,6 +40,7 @@ function Translate({wordToTranslate}){
 
     
     function showTranslation() {
+        console.log("logged in: "+loggedInUser)
         var imageDiv = document.getElementById('translateBox');
         imageDiv.innerHTML = "";
         for(let i = 0; i < wordToTranslate.length; i++){

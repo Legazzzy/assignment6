@@ -21,6 +21,11 @@ const Profile = () => {
         <div>
           <NavBar/>
           <h1>Profile</h1>
+
+          <ProfileHeader username={ user }/>
+          <ProfileActions logout={ logout }/>
+          <ProfileTranslateHistory translations={ "user.username" }/>
+          
         </div>
     )
 }
