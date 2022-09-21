@@ -8,7 +8,7 @@ function HelloLogo(){
     return(
         <div>
             <img src={logoHallo} className="App-logo" alt="logo" />
-            <p class="underline"></p>
+            <p className="underline"></p>
         </div>
     )
 }

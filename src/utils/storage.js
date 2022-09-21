@@ -7,4 +7,7 @@ export const storageRead = key => {
     if (data) {
         return JSON.parse(data)
     }
+
+
+    return null
 }
