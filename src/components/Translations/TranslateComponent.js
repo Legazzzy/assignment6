@@ -40,7 +40,6 @@ function Translate({wordToTranslate}){
 
     
     function showTranslation() {
-        console.log("logged in: "+loggedInUser)
         var imageDiv = document.getElementById('translateBox');
         imageDiv.innerHTML = "";
         for(let i = 0; i < wordToTranslate.length; i++){

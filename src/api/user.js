@@ -1,24 +1,25 @@
 import { createHeaders } from './index'
 
-const apiUrl = process.env.REACT_APP_API_URL;
-
+const apiUrl = process.env.REACT_APP_API_URL+"/translations"
 
 export const checkForUser = async (username) => {
     try {
-        const response = fetch('${apiUrl}?username=${username}');
+        const response = await fetch(`${apiUrl}?username=${username}`);
+        console.log(response)
         if(!response.ok) {
             throw new Error('Could not complete request');
         }
         const data = await response.json();
         return [null, data];
-    } catch (error) {
-        return [error.message, null];
+    }
+    catch (error) {
+        return [error.message, []]
     }
 }
 
 export const createUser = async (username) => {
     try {
-        const response = fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: createHeaders(),
             body: JSON.stringify({
@@ -32,21 +33,21 @@ export const createUser = async (username) => {
         const data = await response.json();
         return [null, data];
     } catch (error) {
-        return [error.message, null];
+        return [error.message, []];
     }
 }
 
 export const loginUser = async (username) => {
-    const [ checkError, user ] = await checkForUser(username);
+    const [checkError, user] = await checkForUser(username)
 
-    if(checkError !== null) {
-        return [ checkError, null ];
+    if (checkError !== null) {
+        return [ checkError, null ]
     }
 
     if (user.length > 0){
-        //User exist
         return [ null, user.pop() ];
     }
 
     return await createUser(username);
+
 }
