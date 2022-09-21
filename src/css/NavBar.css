@@ -1,0 +1,32 @@
+.navBar{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 105px;
+    background: #8D8E8E;
+    width: 100%;
+    min-width: 800px;
+    height: 50px;
+    z-index: 99;
+    text-align: center;
+
+}
+
+.info{
+    border: 2px solid white;
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+    width: 50%;
+    margin-top: 0px;
+    height: 48px;
+}
+.text{
+    margin-left: 40%;
+    margin-top: 0;
+    width: 170px;
+    cursor: pointer;
+}
