@@ -27,10 +27,13 @@ import x from '../../assets/individial_signs/x.png';
 import y from '../../assets/individial_signs/y.png';
 import z from '../../assets/individial_signs/z.png';
 import { useEffect } from "react";
-import { loggedInUser } from "../Login/LoginForm";
+import { useUser } from '../../context/UserContext';
+
 
 
 function Translate({wordToTranslate}){
+    const { user, setUser} = useUser()
+
 
     useEffect(() => {
         
@@ -40,6 +43,7 @@ function Translate({wordToTranslate}){
 
     
     function showTranslation() {
+        console.log(user)
         var imageDiv = document.getElementById('translateBox');
         imageDiv.innerHTML = "";
         for(let i = 0; i < wordToTranslate.length; i++){
