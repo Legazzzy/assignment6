@@ -22,6 +22,7 @@ const TranslateInput = ({setWordToTranslate}) => {
                 <p className="underline"></p>
             </div>
 
+
         </div>
     )
 }
