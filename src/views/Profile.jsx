@@ -18,13 +18,18 @@ const Profile = () => {
         nav('/');
     }
 
+    const updateUser = () => {
+        setUser({...user,
+            translations: []})
+    }
+
 
     return (
         <div>
           <NavBar/>
           <h1>Profile</h1>
           <ProfileHeader username={ user.username }/>
-          <ProfileActions logout={ logout } userId={user.id}/>
+          <ProfileActions logout={ logout } userId={user.id} updateUser={ updateUser }/>
           <ProfileTranslationHistory translations={user.translations}/>
           
         </div>
