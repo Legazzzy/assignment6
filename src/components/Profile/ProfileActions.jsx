@@ -1,6 +1,6 @@
 import { translationClearHistory } from "../../api/translation";
 
-const ProfileActions = ({ logout, userId }) => {
+const ProfileActions = ({ logout, userId, updateUser }) => {
 
     const handleLogoutClick = () => {
         if(window.confirm('Are you sure you want to log out?')){
@@ -11,14 +11,11 @@ const ProfileActions = ({ logout, userId }) => {
     }
 
     const handleClearHistoryClick = async () => {
-        if(!window.confirm('Are you sure you want to clear history?')){
-            return;
+        if(window.confirm('Are you sure you want to clear history?')){
+            console.log(userId);
+            const [ error, result ] = await translationClearHistory(userId);
+            updateUser();
         }
-
-        console.log(userId);
-        const [ error, result ] = await translationClearHistory(userId);
-
-        
     }
 
     return (
