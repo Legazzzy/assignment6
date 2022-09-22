@@ -11,11 +11,54 @@
 .formDiv{
     position: relative;
     top: -360px;
+    left: 30px;
+
 }
+
 
 .logoandform{
     text-align: center;
     
 }
 
+::placeholder{
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+}
+.input:focus{
+    outline: none;
+}
+.loginButton{
+    position: relative;
+    background: #475B5A;
+    border: none;
+    height: 36px;
+    border-radius: 10px;
+    left: -61px;
+    top: -2px;
+    font-size: 16px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
+}
+.username{
+    border: none;
+    background: #8D8E8E;
+    height: 46px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: white;
 
+}

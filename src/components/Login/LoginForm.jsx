@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { storageRead, storageSave } from '../../utils/storage';
 import { useUser } from '../../context/UserContext';
 import { loginUser } from '../../api/user';
+import '../../css/login.css';
 
 const usernameConfig = {
     required: true,
@@ -53,8 +54,10 @@ const LoginForm = () => {
     return (
         <>
             <form onSubmit={ handleSubmit(onSubmit)} className="formDiv">
+                <div className="content">
                 <input type="text" className="username" name="username" placeholder="Username" {...register("username", usernameConfig )}/>
-                <button type='submit' disabled = {loading} >Log in</button>
+                <button className="loginButton" type='submit' disabled = {loading} >Log in</button>
+                </div>
 
                 {apiError && <p>{apiError}</p>}
             </form>
