@@ -59,6 +59,7 @@ function Translate({wordToTranslate}){
         }
         if(wordToTranslate != ""){
             const [error, result] = await translationAdd(user, wordToTranslate)
+            setUser({...user, translations: [...user.translations, wordToTranslate] })
         }    }
     
 
