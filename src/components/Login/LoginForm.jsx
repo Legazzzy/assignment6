@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { storageRead, storageSave } from '../../utils/storage';
+import { storageSave } from '../../utils/storage';
 import { useUser } from '../../context/UserContext';
 import { loginUser } from '../../api/user';
 import '../../css/login.css';
@@ -34,6 +34,14 @@ const LoginForm = () => {
         }
     }, [ user, nav ])
 
+    /**
+     * Takes in written username and disables the login button
+     * Then sends username to loginUser to validate if it's an existing user or new user
+     * If there is an error, display it.
+     * If user is not null, it means that responseUser has changed, and is now the user
+     * Set user to respionseUser.
+     * Enables button again
+     */
     const onSubmit = async ({ username }) => {
         setLoading(true)
         const [error, responseUser] = await loginUser(username)
@@ -47,9 +55,6 @@ const LoginForm = () => {
         }
         setLoading(false)
     };
-
-    const errorMessage = (() => {
-    }) ()
 
     return (
         <>

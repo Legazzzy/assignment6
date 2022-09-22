@@ -1,6 +1,6 @@
 import { createHeaders } from './index'
 
-const apiUrl = process.env.REACT_APP_API_URL
+const apiUrl = process.env.REACT_APP_API_URL+"/translations"
 
 export const checkForUser = async (username) => {
     try {
@@ -18,6 +18,7 @@ export const checkForUser = async (username) => {
 }
 
 export const createUser = async (username) => {
+    alert("no user with this name, creating user")
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -38,6 +39,8 @@ export const createUser = async (username) => {
 }
 
 export const loginUser = async (username) => {
+    alert("logging in")
+
     const [checkError, user] = await checkForUser(username)
 
     if (checkError !== null) {
