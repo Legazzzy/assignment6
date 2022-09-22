@@ -2,7 +2,7 @@ import ProfileTranslateHistoryItem from "./ProfileTranslateHistoryItem";
 
 const ProfileTranslateHistory = ({ translations }) => {
 
-    const translationList = translations.map(translation => <ProfileTranslateHistoryItem key={ translation } translation={ translation }/>);
+    const translationList = translations.map((translation, index) => <ProfileTranslateHistoryItem key={ index + '-' + translation } translation={ translation }/>);
     
     const last10 = translationList.splice(-10);
     
