@@ -42,7 +42,7 @@ const LoginForm = () => {
         }
         if (responseUser !== null){
             storageSave('logged in user', responseUser.username)
-            setUser(responseUser.username)
+            setUser(responseUser)
         }
         setLoading(false)
     };
