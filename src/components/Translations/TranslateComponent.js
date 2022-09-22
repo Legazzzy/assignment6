@@ -57,8 +57,9 @@ function Translate({wordToTranslate}){
                 image.src = getImgPath(myChar);
                 imageDiv.appendChild(image);
         }
-        const [error, result] = await translationAdd(user, wordToTranslate)
-    }
+        if(wordToTranslate != ""){
+            const [error, result] = await translationAdd(user, wordToTranslate)
+        }    }
     
 
     function getImgPath(char){
