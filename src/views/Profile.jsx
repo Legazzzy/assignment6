@@ -18,12 +18,13 @@ const Profile = () => {
         nav('/');
     }
 
+
     return (
         <div>
           <NavBar/>
           <h1>Profile</h1>
           <ProfileHeader username={ user.username }/>
-          <ProfileActions logout={ logout }/>
+          <ProfileActions logout={ logout } userId={user.id}/>
           <ProfileTranslationHistory translations={user.translations}/>
           
         </div>
