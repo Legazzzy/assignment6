@@ -5,7 +5,6 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import Main from './components/MainComponent'
 import Login from './views/Login'
 import Translations from './views/Translations'
 import Profile from './views/Profile'
