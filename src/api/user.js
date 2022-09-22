@@ -1,6 +1,6 @@
 import { createHeaders } from './index'
 
-const apiUrl = process.env.REACT_APP_API_URL+"/translations"
+const apiUrl = process.env.REACT_APP_API_URL
 
 export const checkForUser = async (username) => {
     try {
