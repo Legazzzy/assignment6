@@ -9,10 +9,11 @@ import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
 
-    const { user } = useUser();
+    const { user, setUser } = useUser();
     const nav = useNavigate();
 
     const logout = () => {
+        setUser(null);
         nav('/');
     }
 

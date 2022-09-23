@@ -28,6 +28,7 @@ import y from '../../assets/individial_signs/y.png';
 import z from '../../assets/individial_signs/z.png';
 import { useEffect } from "react";
 import { useUser } from '../../context/UserContext';
+import { translationAdd } from "../../api/translation";
 
 
 
@@ -42,7 +43,7 @@ function Translate({wordToTranslate}){
     )
 
     
-    function showTranslation() {
+    async function showTranslation() {
         console.log(user)
         var imageDiv = document.getElementById('translateBox');
         imageDiv.innerHTML = "";
@@ -56,6 +57,7 @@ function Translate({wordToTranslate}){
                 image.src = getImgPath(myChar);
                 imageDiv.appendChild(image);
         }
+        const [error, result] = await translationAdd(user, wordToTranslate)
     }
     
 

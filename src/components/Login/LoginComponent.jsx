@@ -7,7 +7,7 @@ function LoginComp(){
     return(
         <React.Fragment>
         <div className="loginDiv">
-        <img src={logoImg} alt="Logo" className="headerLogo animate__animated animate__bounceInLeft"></img>
+            <img src={logoImg} alt="Logo" className="headerLogo animate_animated animate__bounce animate__delay-2s"></img>
         </div>
         
         </React.Fragment>
