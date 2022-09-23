@@ -2,14 +2,13 @@ import { createHeaders } from "."
 
 const apiUrl = process.env.REACT_APP_API_URL
 
-
+//Adding a translation-input to the api on the logged in user, to store it for other uses.
 export const translationAdd = async (user, translation) => {
     try{
         const response = await fetch(`${apiUrl}/${user.id}`, {
             method: 'PATCH',
             headers: createHeaders(),
             body: JSON.stringify({
-              //  username: user.username,
                 translations: [...user.translations, translation]
             })
         })
@@ -25,6 +24,7 @@ export const translationAdd = async (user, translation) => {
     }
 }
 
+//Clearing a users translation history by setting it to empty.
 export const translationClearHistory = async (userId) => {
     try{
         const response = await fetch(`${apiUrl}/${userId}`, {
