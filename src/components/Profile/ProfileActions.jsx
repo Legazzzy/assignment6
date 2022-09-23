@@ -2,6 +2,7 @@ import { translationClearHistory } from "../../api/translation";
 
 const ProfileActions = ({ logout, userId, updateUser }) => {
 
+    //Handles logging out the user
     const handleLogoutClick = () => {
         if(window.confirm('Are you sure you want to log out?')){
             // Send event to parent
@@ -10,6 +11,7 @@ const ProfileActions = ({ logout, userId, updateUser }) => {
 
     }
 
+    //Function for handling deleting history both locally and in database
     const handleClearHistoryClick = async () => {
         if(window.confirm('Are you sure you want to clear history?')){
             console.log(userId);
@@ -18,10 +20,13 @@ const ProfileActions = ({ logout, userId, updateUser }) => {
         }
     }
 
+    //Returns the buttons the user can interact with
     return (
         <ul>
-            <li><button onClick={ handleClearHistoryClick }>Clear History</button></li>
-            <li><button onClick={ handleLogoutClick }>Logout</button></li>
+            <div class="profileBtns">
+                <ul><button class="profileBtn" onClick={ handleClearHistoryClick }>Clear History</button></ul>
+                <ul><button class="profileBtn" onClick={ handleLogoutClick }>Logout</button></ul>
+            </div>
         </ul>
     )
 }

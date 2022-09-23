@@ -1,0 +1,38 @@
+.profilecontent {
+    position:absolute;
+    background-color: grey;
+    border: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    top: 200px;
+    text-align: center;
+    width:70%;
+    margin-left: 15%;
+    font-size: 30px;
+    font-family: 'Love Ya Like A Sister';
+}
+
+.profileBtns {
+    column-count: 2;
+}
+
+.profileBtn {
+    position: relative;
+    background: #475B5A;
+    border: none;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    background: #475B5A;
+    color: white;
+    cursor: pointer;
+}
+
+.profileBtn:hover {
+    background: #384443;
+}
