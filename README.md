@@ -54,7 +54,7 @@ This project is open-source. You are free to use any of the code in your own pro
 **Code authors:**
 
 - [Linnea Johansen](https://gitlab.com/LinneaJohansen)
-- [Ulrik Lunde] (https://github.com/UlrikLun)
+- [Ulrik Lunde](https://github.com/UlrikLun)
 - [Marius Eriksen](https://github.com/Legazzzy)
 
 **Assignment given by:**
