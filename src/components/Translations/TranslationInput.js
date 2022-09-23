@@ -5,9 +5,10 @@ import '../../css/TranslateInputComponent.css';
 
 const TranslateInput = ({setWordToTranslate}) => {
     
-    
+    //State for the user-given word/sentence to be translated
     const [inputWord, setInputWord] = useState("");
     
+    //When the input is changed, the inputWord is changed along with it
     const handleInput = (event) => {
         setInputWord(event.target.value)
     };

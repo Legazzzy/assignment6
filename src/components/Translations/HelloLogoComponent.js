@@ -4,6 +4,7 @@ import '../../css/TranslateComponent.css';
 
 import React from "react";
 
+//Simple html to display the Hello logo.
 function HelloLogo(){
     return(
         <div>

@@ -42,7 +42,7 @@ function Translate({wordToTranslate}){
     },[wordToTranslate]
     )
 
-    
+    //Function to display png's of every letter in the translation input.
     async function showTranslation() {
         console.log(user)
         var imageDiv = document.getElementById('translateBox');
@@ -57,12 +57,13 @@ function Translate({wordToTranslate}){
                 image.src = getImgPath(myChar);
                 imageDiv.appendChild(image);
         }
+        //Check if the input is not empty before adding it to the api and updating current user.
         if(wordToTranslate != ""){
             const [error, result] = await translationAdd(user, wordToTranslate)
             setUser({...user, translations: [...user.translations, wordToTranslate] })
         }    }
     
-
+    //Returning the image path for a given letter.
     function getImgPath(char){
         let path = "";
         switch(char){
@@ -148,6 +149,7 @@ function Translate({wordToTranslate}){
             return path;
     }
 
+    //Html to ser up a card that displays a translation
     return(
         <div className="card">
             <div className="top">
